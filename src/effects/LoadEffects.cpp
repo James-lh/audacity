@@ -49,6 +49,8 @@
 #include "ToneGen.h"
 #include "TruncSilence.h"
 #include "Wahwah.h"
+#include "HPSS.h"
+#include "HPSSVocalRemoval.h"
 
 #include "FindClipping.h"
 
@@ -128,6 +130,8 @@
    EFFECT( TRUNCATESILENCE,   EffectTruncSilence() )     \
    EFFECT( WAHWAH,            EffectWahwah() )           \
    EFFECT( FINDCLIPPING,      EffectFindClipping() )     \
+   EFFECT( HPSS,              EffectHPSS() )             \
+   EFFECT( HPSSVOCALREMOVAL,  EffectHPSSVocalRemoval() ) \
    NOISEREDUCTION_EFFECT                                 \
    SOUNDTOUCH_EFFECTS                                    \
    EFFECT( AUTODUCK,          EffectAutoDuck() )         \

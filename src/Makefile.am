@@ -338,6 +338,15 @@ audacity_SOURCES = \
 	effects/FindClipping.h \
 	effects/Generator.cpp \
 	effects/Generator.h \
+	effects/HPSS-core.cpp \
+	effects/HPSS-core.h \
+	effects/HPSS-parameter.h \
+	effects/HPSS-pluginbase.cpp \
+	effects/HPSS-pluginbase.h \
+	effects/HPSS.cpp \
+	effects/HPSS.h \
+	effects/HPSSVocalRemoval.cpp \
+	effects/HPSSVocalRemoval.h \
 	effects/Invert.cpp \
 	effects/Invert.h \
 	effects/Leveller.cpp \
