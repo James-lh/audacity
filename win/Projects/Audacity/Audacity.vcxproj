@@ -250,6 +250,10 @@
     <ClCompile Include="..\..\..\src\DirManager.cpp" />
     <ClCompile Include="..\..\..\src\Dither.cpp" />
     <ClCompile Include="..\..\..\src\effects\EffectRack.cpp" />
+    <ClCompile Include="..\..\..\src\effects\HPSS-core.cpp" />
+    <ClCompile Include="..\..\..\src\effects\HPSS-pluginbase.cpp" />
+    <ClCompile Include="..\..\..\src\effects\HPSS.cpp" />
+    <ClCompile Include="..\..\..\src\effects\HPSSVocalRemoval.cpp" />
     <ClCompile Include="..\..\..\src\effects\NoiseReduction.cpp" />
     <ClCompile Include="..\..\..\src\effects\Phaser.cpp" />
     <ClCompile Include="..\..\..\src\Envelope.cpp" />
@@ -525,6 +529,11 @@
     <ClInclude Include="..\..\..\src\DeviceChange.h" />
     <ClInclude Include="..\..\..\src\Diags.h" />
     <ClInclude Include="..\..\..\src\effects\EffectRack.h" />
+    <ClInclude Include="..\..\..\src\effects\HPSS-core.h" />
+    <ClInclude Include="..\..\..\src\effects\HPSS-parameter.h" />
+    <ClInclude Include="..\..\..\src\effects\HPSS-pluginbase.h" />
+    <ClInclude Include="..\..\..\src\effects\HPSS.h" />
+    <ClInclude Include="..\..\..\src\effects\HPSSVocalRemoval.h" />
     <ClInclude Include="..\..\..\src\effects\NoiseReduction.h" />
     <ClInclude Include="..\..\..\src\effects\Phaser.h" />
     <ClInclude Include="..\..\..\src\import\FormatClassifier.h" />

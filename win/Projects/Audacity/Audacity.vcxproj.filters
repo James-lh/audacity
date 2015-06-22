@@ -840,6 +840,18 @@
     <ClCompile Include="..\..\..\src\ViewInfo.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\src\effects\HPSS.cpp">
+      <Filter>src/effects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\effects\HPSS-core.cpp">
+      <Filter>src/effects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\effects\HPSS-pluginbase.cpp">
+      <Filter>src/effects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\effects\HPSSVocalRemoval.cpp">
+      <Filter>src/effects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\src\AboutDialog.h">
@@ -1678,6 +1690,21 @@
     </ClInclude>
     <ClInclude Include="..\..\..\src\AudacityHeaders.h">
       <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\effects\HPSS.h">
+      <Filter>src/effects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\effects\HPSS-core.h">
+      <Filter>src/effects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\effects\HPSS-parameter.h">
+      <Filter>src/effects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\effects\HPSS-pluginbase.h">
+      <Filter>src/effects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\effects\HPSSVocalRemoval.h">
+      <Filter>src/effects</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
