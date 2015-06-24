@@ -4,7 +4,7 @@
 #include "HPSS-parameter.h"
 #include "HPSS-pluginbase.h"
 
-static const wxString HPSS_PLUGIN_SYMBOL = XO("HPSS");
+static const wxString HPSS_PLUGIN_SYMBOL = XO("Harmonic-Percussive Sound Separation (HPSS)");
 
 // =============================================================================
 //  == EffectHPSS

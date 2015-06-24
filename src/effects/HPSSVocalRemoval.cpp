@@ -39,8 +39,8 @@ END_EVENT_TABLE()
 
 EffectHPSSVocalRemoval::EffectHPSSVocalRemoval() :
          EffectBaseHPSS("HPSS-based vocal removal", WienerMask, SecondTrackOnly),
-         m_FrameSizeShortMSParameter("Frame size short", "ms", 15),
-         m_FrameSizeLongMSParameter("Frame size long", "ms", 250) {
+         m_FrameSizeShortMSParameter("Frame size short", "2^x samples", 9),
+         m_FrameSizeLongMSParameter("Frame size long", "2^x samples", 13) {
    std::vector<std::string> v;
    v.push_back("Vocal component only");
    v.push_back("Non-vocal component only");
@@ -50,7 +50,7 @@ EffectHPSSVocalRemoval::EffectHPSSVocalRemoval() :
 
 std::list<HPSSParameter*> EffectHPSSVocalRemoval::GetParameters() {
    std::list<HPSSParameter*> parameters;
-   parameters.push_back(&m_SamplingRateDisplay);
+   //parameters.push_back(&m_SamplingRateDisplay);
    parameters.push_back(&m_MaskTypeParameter);
    parameters.push_back(&m_OutputModeParameter);
    parameters.push_back(&m_FrameSizeShortMSParameter);
@@ -78,7 +78,6 @@ bool EffectHPSSVocalRemoval::ValidateUI() {
       if (m_FrameSizeLongMSParameter.GetValue() <= m_FrameSizeShortMSParameter.GetValue()) {
          throw std::runtime_error("Long frame size should be longer than the short one.");
       }
-      GetSelectionSampleRate(); // throws if there is a problem
       return true;
    } catch (const std::runtime_error& ex) {
       ShowValidationError(ex);

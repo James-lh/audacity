@@ -81,13 +81,16 @@ public:
 class HPSSParameter_FrameSizeSlider : public HPSSParameter_NumericSlider {
 protected:
    wxStaticText* m_pSamplesControl;
+   wxStaticText* m_pMillisecControl;
 public:
    HPSSParameter_FrameSizeSlider(const std::string& name, const std::string& unit, const int& value):
-                           HPSSParameter_NumericSlider(name, unit, value, 1, 1000), m_pSamplesControl(NULL) {}
+                           HPSSParameter_NumericSlider(name, unit, value, 1, 20), m_pSamplesControl(NULL), m_pMillisecControl(NULL) {}
    virtual void PopulateOrExchange(ShuttleGui& S) {
       HPSSParameter_NumericSlider::PopulateOrExchange(S);
-      S.AddPrompt(wxString(m_Name.c_str(), wxConvUTF8) + _(" [samples, nearest power of 2]:"));
+      S.AddPrompt(wxString(m_Name.c_str(), wxConvUTF8) + _(" [samples]:"));
       m_pSamplesControl = S.AddVariableText(_("PLACEHOLDER"));
+      S.AddPrompt(wxString(m_Name.c_str(), wxConvUTF8) + _(" [ms @ 44.1kHz]:"));
+      m_pMillisecControl = S.AddVariableText(_("PLACEHOLDER"));
    }
    
    virtual void TransferDataToWindow(EffectBaseHPSS* pEffect) {

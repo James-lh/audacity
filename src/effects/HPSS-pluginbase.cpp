@@ -33,12 +33,8 @@ void HPSSParameter_ReadOnlyText::TransferDataToWindow(EffectBaseHPSS* pEffect) {
 }
 
 void HPSSParameter_FrameSizeSlider::UpdateSamplesControl(EffectBaseHPSS* pEffect) {
-   try {
-      m_pSamplesControl->SetLabel(wxString::Format(wxT("%i"),
-                     pEffect->FrameSizeMS_To_FrameSizeSamples(m_Value, pEffect->GetSelectionSampleRate())));
-   } catch(const std::runtime_error& ex) {
-      m_pSamplesControl->SetLabel(_("ERROR: variable sample rate"));
-   }
+   m_pSamplesControl->SetLabel(wxString::Format(wxT("%i"), (int)pow(2, m_Value)));
+   m_pMillisecControl->SetLabel(wxString::Format(wxT("%0.2f"), pow(2, m_Value)/44.1));
 }
 
 // ================================================================================
@@ -219,7 +215,7 @@ uint32_t EffectBaseHPSS::FrameSizeMS_To_FrameSizeSamples(uint32_t frameSizeMS, d
 }
 
 bool EffectBaseHPSS::GetAutomationParameters(EffectAutomationParameters & parms) {
-   std::cout << "SetAutomationParameters" << std::endl;
+   std::cout << "GetAutomationParameters" << std::endl;
    const std::list<HPSSParameter*> parameters = GetParameters();
    for (std::list<HPSSParameter*>::const_iterator it = parameters.begin(); it != parameters.end(); it++) {
       (*it)->GetAutomationParameters(parms);

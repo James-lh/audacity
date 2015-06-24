@@ -39,7 +39,7 @@ BEGIN_EVENT_TABLE(EffectHPSS, wxEvtHandler)
 END_EVENT_TABLE()
 
 EffectHPSS::EffectHPSS() : EffectBaseHPSS("Harmonic/percussive sound separation", WienerMask, KeepBothTracks),
-                           m_FrameSizeMSParameter("Frame size", "ms", 15) {
+                           m_FrameSizeMSParameter("Frame size", "2^x samples", 9) {
    std::vector<std::string> v;
    v.push_back("Harmonic only");
    v.push_back("Percussive only");
@@ -49,7 +49,7 @@ EffectHPSS::EffectHPSS() : EffectBaseHPSS("Harmonic/percussive sound separation"
 
 std::list<HPSSParameter*> EffectHPSS::GetParameters() {
    std::list<HPSSParameter*> parameters;
-   parameters.push_back(&m_SamplingRateDisplay);
+   //parameters.push_back(&m_SamplingRateDisplay);
    parameters.push_back(&m_MaskTypeParameter);
    parameters.push_back(&m_OutputModeParameter);
    parameters.push_back(&m_FrameSizeMSParameter);
@@ -68,7 +68,6 @@ void EffectHPSS::RunCore(SignalStream& inputSignal, SignalStream& outputSignal1,
 
 bool EffectHPSS::ValidateUI() {
    try {
-      GetSelectionSampleRate(); // throws if there is a problem
       return true;
    } catch (const std::runtime_error& ex) {
       ShowValidationError(ex);

@@ -1,7 +1,7 @@
 #ifndef HPSS_VOCAL_REMOVAL_H
 #define HPSS_VOCAL_REMOVAL_H
 
-static const wxString HPSSVOCALREMOVAL_PLUGIN_SYMBOL = XO("HPSS_VOCAL_REMOVAL");
+static const wxString HPSSVOCALREMOVAL_PLUGIN_SYMBOL = XO("HPSS-based vocal removal");
 
 // =============================================================================
 //  == EffectHPSSVocalRemoval
