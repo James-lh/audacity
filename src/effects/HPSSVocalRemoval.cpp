@@ -39,8 +39,8 @@ END_EVENT_TABLE()
 
 EffectHPSSVocalRemoval::EffectHPSSVocalRemoval() :
          EffectBaseHPSS("HPSS-based vocal removal", WienerMask, SecondTrackOnly),
-         m_FrameSizeShortMSParameter("Frame size short", "2^x samples", 9),
-         m_FrameSizeLongMSParameter("Frame size long", "2^x samples", 13) {
+         m_FrameSizeShortMSParameter("Frame size (short)", "2^x samples", 9),
+         m_FrameSizeLongMSParameter("Frame size (long)", "2^x samples", 13) {
    std::vector<std::string> v;
    v.push_back("Vocal component only");
    v.push_back("Non-vocal component only");
@@ -62,8 +62,8 @@ std::list<HPSSParameter*> EffectHPSSVocalRemoval::GetParameters() {
 void EffectHPSSVocalRemoval::RunCore(SignalStream& inputSignal, SignalStream& outputSignal1, SignalStream& outputSignal2,
                                      const double sampleRate, const int whichTrack) {
    HPSSCore().executeHPSSVocalRemoval(
-      FrameSizeMS_To_FrameSizeSamples(m_FrameSizeShortMSParameter.GetValue(), sampleRate),
-      FrameSizeMS_To_FrameSizeSamples(m_FrameSizeLongMSParameter.GetValue(), sampleRate),
+      (int)pow(2, m_FrameSizeShortMSParameter.GetValue()),
+      (int)pow(2, m_FrameSizeLongMSParameter.GetValue()),
       m_MaskTypeParameter.GetValue(),
       (float)m_FinalMultiplierParameter.GetValue() / 100,
       inputSignal, outputSignal1, outputSignal2, whichTrack, this);

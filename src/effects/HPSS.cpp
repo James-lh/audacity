@@ -61,7 +61,7 @@ void EffectHPSS::RunCore(SignalStream& inputSignal, SignalStream& outputSignal1,
                          const double sampleRate, const int whichTrack) {
    ProgressInfo progressInfo = ProgressInfo(whichTrack, 0, 1);
    std::cout << "[RunCore] " << GetDebugDescription() << std::endl;
-   HPSSCore().executeHPSS(FrameSizeMS_To_FrameSizeSamples(m_FrameSizeMSParameter.GetValue(), sampleRate),
+   HPSSCore().executeHPSS((int)pow(2, m_FrameSizeMSParameter.GetValue()),
                           m_MaskTypeParameter.GetValue(), (float)m_FinalMultiplierParameter.GetValue() / 100,
                           inputSignal, outputSignal1, outputSignal2, progressInfo, this);
 }

@@ -27,7 +27,7 @@ public:
    }
    virtual std::string GetValueString() = 0;
    virtual std::string ToNameValueString() {
-      return std::string("[") + m_Name + std::string(": ") + GetValueString() + m_Unit + std::string("]");
+      return std::string("[") + m_Name + std::string(": ") + GetValueString() + std::string(" ") + m_Unit + std::string("]");
    }
    virtual void PopulateOrExchange(ShuttleGui& S) = 0;
    virtual void TransferDataToWindow(EffectBaseHPSS* pEffect) = 0;   
